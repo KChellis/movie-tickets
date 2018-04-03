@@ -3,9 +3,10 @@ body {
   linear-gradient(
     rgba(25, 25, 25, 0.48),
     rgba(25, 25, 25, 0.48)
-  ), url("../img/theater.jpg");
+  ), url("../img/theater.jpg") no-repeat center center fixed;
   background-size: cover;
   color: white;
+  height: 100%;
 }
 
 .container {
