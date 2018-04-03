@@ -10,7 +10,37 @@
   </head>
   <body>
     <div class="container">
-
+      <h1>Movie Ticket Cost</h1>
+      <form id="ticketForm">
+        <div class="form-group">
+          <label for="name">Enter movie:</label>
+          <input id="name" type="text" name="name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="time">What time would you like to go?</label>
+          <select id="time" class="form-control" name="time">
+            <option value="morning">Morning</option>
+            <option value="afternoon">Afternoon</option>
+            <option value="evening">Evening</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="age">Enter your age:</label>
+          <input id="age" type="number" name="age" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="veteran">Are you a veteran or student?</label>
+          <select id="veteran" class="form-control" name="veteran">
+            <option value=true>Yes</option>
+            <option value=false>No</option>
+          </select>
+        </div>
+        <button class="btn btn-info" type="submit" name="button">Get Cost</button>
+      </form>
+      <div class="hidden">
+        <p>Your ticket to <span id="movie"></span> will cost <span id="cost"></span>.</p>
+        <button id="retry" type="button" name="button">Try again</button>
+      </div>
     </div>
   </body>
 </html>
