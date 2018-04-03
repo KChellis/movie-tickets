@@ -1,6 +1,30 @@
+body {
+  background:
+  linear-gradient(
+    rgba(25, 25, 25, 0.48),
+    rgba(25, 25, 25, 0.48)
+  ), url("../img/theater.jpg");
+  background-size: cover;
+  color: white;
+}
+
+.container {
+  margin-top: 5%;
+}
+
 .hidden {
   display: none;
 }
+
 p {
   font-size: 22px;
+}
+
+.movie {
+  height: 273px;
+  width: 171px;
+}
+
+.form-control {
+  width: 95%;
 }

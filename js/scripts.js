@@ -1,3 +1,6 @@
+var name;
+var total = 0;
+
 function Ticket(name, time, age, veteran){
   this.name = name;
   this.time = time;
@@ -12,10 +15,10 @@ Ticket.prototype.ticketPrice = function(){
   if (this.age < 10 || this.age > 55) {
     price -= 3;
   }
-  if (this.veteran) {
+  if (this.veteran === "Yes") {
     price -= 3;
   }
-  return "$" + price;
+  return price;
 }
 function clearForm(){
   $("input#name").val("");
@@ -23,18 +26,29 @@ function clearForm(){
     $("input#age").val("");
     $("input#veteran").val("");
 }
+
+function ticketTotal(cost){
+  return total += cost;
+}
+
+
 $(function(){
+  $(".movie").click(function() {
+    name = $(this).val();
+    console.log(name);
+  });
+
   $("#ticketForm").submit(function(event){
     event.preventDefault();
-    var name = $("#name").val();
     var time = $("#time").val();
     var age = parseInt($("#age").val());
     var veteran = $("#veteran").val();
 
-    var newTicket = new Ticket(name, time, age, veteran);
+    var newTicket =
+    new Ticket(name, time, age, veteran);
     var cost = newTicket.ticketPrice();
-    $("#ticketForm").slideUp();
-    $("#cost").text(cost);
+    $('#total').text(ticketTotal(cost));
+    $("#cost").prepend("<tr><td>Ticket to " + newTicket.name + "</td><td>$" + cost + "</td></tr>");
     $("#movie").text(newTicket.name);
     $(".hidden").fadeIn(2000);
     clearForm();
